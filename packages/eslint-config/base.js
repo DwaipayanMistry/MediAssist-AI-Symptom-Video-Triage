@@ -24,6 +24,11 @@ export const config = [
   {
     plugins: {
       onlyWarn,
+      prettier: require('eslint-plugin-prettier'),
+      
+    },
+    rules: {
+      'prettier/prettier': 'error',
     },
   },
   {
