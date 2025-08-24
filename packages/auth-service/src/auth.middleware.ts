@@ -9,15 +9,15 @@ export const isAuthenticated = (
   next: NextFunction
 ) => {
   const auth = req.headers.authorization;
-  if (!auth?.startsWith("Barer "))
-    return res.status(401).json({ error: "Unaurthorized access" });
+  if (!auth?.startsWith("Bearer "))
+    return res.status(401).json({ error: "Unauthorized access - No token" });
   try {
     const token = auth.split(" ")[1];
-    const paylod = jwt.verify(token, env.JWT_SECRET) as JwtPayload;
-    req.user = paylod;
+    const payload = jwt.verify(token, env.JWT_SECRET) as JwtPayload;
+    req.user = payload;
     next();
   } catch (error) {
-    return res.status(401).json({ error: "Invalid token" });
+    return res.status(401).json({ error: "Unauthorized access - Invalid token" });
   }
 };
 // Middleware to check if the user has the required roles
