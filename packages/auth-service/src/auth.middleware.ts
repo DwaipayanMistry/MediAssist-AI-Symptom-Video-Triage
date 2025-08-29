@@ -1,5 +1,7 @@
-import type { Request, Response, NextFunction } from "express";
-import jwt from "jsonwebtoken";
+import type { Request, Response, NextFunction, RequestHandler } from "express";
+// import jwt from "jsonwebtoken";
+import * as jwt from "jsonwebtoken";
+
 import { JwtPayload } from "./types";
 import { env } from "./env";
 
@@ -17,15 +19,23 @@ export const isAuthenticated = (
     req.user = payload;
     next();
   } catch (error) {
-    return res.status(401).json({ error: "Unauthorized access - Invalid token" });
+    return res
+      .status(401)
+      .json({ error: "Unauthorized access - Invalid token" });
   }
 };
+
 // Middleware to check if the user has the required roles
 export const hasRole =
-  (...roles:  JwtPayload["role"][]) =>
+  (...roles: JwtPayload["role"][]) =>
   (req: Request, res: Response, next: NextFunction) => {
     if (!req.user) return res.status(401).json({ error: "Unauthorized" });
     if (!roles.includes(req.user.role))
       return res.status(403).json({ error: "Forbidden" });
     next();
   };
+
+export interface AuthRequest extends Request {
+  user?: JwtPayload & { id: string; role: string };
+}
+
