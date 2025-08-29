@@ -1,15 +1,9 @@
 {
-  
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
     "composite": true,
-    "declaration": true,
-    "emitDeclarationOnly": false,
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "skipLibCheck": true,
-    "strict": true
+    "rootDir": "src",
+    "outDir": "dist"
   },
   "include": ["src"]
 }

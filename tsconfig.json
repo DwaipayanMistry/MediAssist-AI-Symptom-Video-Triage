@@ -1,0 +1,24 @@
+{
+  "files": [],
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@mediassist/auth-service": ["packages/auth-service/src/index.ts"],
+      "@mediassist/auth-service/*": ["packages/auth-service/src/*"],
+      "@mediassist/backend/*": ["apps/backend/src/*"],
+      "@mediassist/web/*": ["apps/web/src/*"]
+    }
+  },
+  "references": [
+    { "path": "./apps/backend" },
+    { "path": "./apps/web" },
+    { "path": "./packages/auth-service" }
+  ]
+}
