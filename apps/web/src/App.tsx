@@ -1,12 +1,12 @@
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
-import "./App.css";
 
+import "./App.css";
+import Signup  from "@repo/ui/signup";
 function App() {
 
   return (
     <>
-      <div className="text-3xl font-bold underline">Hello World!!</div>
+      <div className="text-3xl font-bold underline bg-amber-400 text-amber-900">Hello World!!</div>
+      <Signup></Signup>
     </>
   );
 }
