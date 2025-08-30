@@ -72,26 +72,26 @@ router.post("/login", async (req: Request, res: Response) => {
 });
 
 // ---------------- Me ----------------
-router.post("/me", async (req: Request, res: Response) => {
+router.post("/me",isAuthenticated, async (req: Request, res: Response) => {
   try {
     const me = await prisma.user.findUnique({
-      where: { id: req.body.id },
+      where: { id: req.user?.id },
       select: { id: true, email: true, role: true, createdAt: true },
     });
 
     return res.status(200).json({ user: me });
   } catch (error) {
     console.error(`Failure at Me endpoint ${error}`);
-    return res.status(500).json({ error: "Internal service error" });
+    return res.status(500).json({ error: "Internal service error"+error });
   }
 });
 
 // ---------------- Example admin-only route ----------------
-router.get("/admin/ping", isAuthenticated, hasRole("admin"), (req, res) => {
+router.get("/admin/ping", isAuthenticated, hasRole("admin"), (req:Request, res:Response) => {
   return res.json({ ok: true });
 });
 
-router.get("/health", (req, res) => {
+router.get("/health", (req:Request, res:Response) => {
   res.status(200).send("OK");
 });
 
