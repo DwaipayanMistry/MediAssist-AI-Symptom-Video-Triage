@@ -7,5 +7,5 @@ export function Code({
   children: React.ReactNode;
   className?: string;
 }): JSX.Element {
-  return <code className={className}>{children}</code>;
+  return <code className="bg-amber-600">{children}</code>;
 }
