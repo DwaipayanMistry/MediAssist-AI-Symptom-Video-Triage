@@ -1,11 +1,25 @@
+// backend/tsconfig.json
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "module": "CommonJS",
     "composite": true,
     "rootDir": "src",
-    "outDir": "dist"
+    "outDir": "dist",
+    // "ignoreDeprecations": "6.0"
   },
   "include": ["src"],
   "references": [{ "path": "../../packages/auth-service" }]
 }
+
+// {
+//   "extends": "../../tsconfig.json",
+//   "compilerOptions": {
+//     "module": "CommonJS",
+//     "composite": true,
+//     "rootDir": "src",
+//     "outDir": "dist"
+//   },
+//   "include": ["src"],
+//   "references": [{ "path": "../../packages/auth-service" }]
+// }
