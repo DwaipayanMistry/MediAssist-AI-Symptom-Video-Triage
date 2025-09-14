@@ -1,4 +1,4 @@
-import { email, z } from "zod";
+import { z } from "zod";
 
 const role = z.enum(["PATIENT", "DOCTOR", "ADMIN"]).default("PATIENT");
 
@@ -12,7 +12,7 @@ export const RegistrationSchema = z.object({
 
 export const LoginSchema = z.object({
   email: z.email(),
-  password: z.string().min(1),
+  password: z.string().min(6),
 });
 
 export type RegistrationSchemaType = z.infer<typeof RegistrationSchema>;

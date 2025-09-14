@@ -1,10 +1,13 @@
-// auth-service/tsconfig.json
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "composite": true,
     "rootDir": "src",
-    "outDir": "dist"
+    "outDir": "dist",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "declaration": true,
+    "declarationMap": true
   },
   "include": ["src"]
 }

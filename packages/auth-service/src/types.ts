@@ -1,4 +1,3 @@
-import { z } from "zod";
 export type JwtPayload = {
   id: string;
   role: "poatient" | "doctor" | "admin";
