@@ -1,12 +1,12 @@
-// base tsconfig.json
+//base ./tsconfig.json
 {
-  "files": [],
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    // "moduleResolution": "node",          // modern Node resolution
     "strict": true,
     "esModuleInterop": true,
+    "moduleResolution": "node",
+    // "ignoreDeprecations": "*",
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
@@ -15,8 +15,7 @@
       "@mediassist/auth-service/*": ["packages/auth-service/src/*"],
       "@mediassist/backend/*": ["apps/backend/src/*"],
       "@mediassist/web/*": ["apps/web/src/*"]
-    },
-    // "ignoreDeprecations": "6.0"          // optional, silences deprecation warnings temporarily
+    }
   },
   "references": [
     { "path": "./apps/backend" },
@@ -24,14 +23,14 @@
     { "path": "./packages/auth-service" }
   ]
 }
+
+// // base tsconfig.json
 // {
 //   "files": [],
 //   "compilerOptions": {
 //     "target": "ESNext",
 //     "module": "ESNext",
-//     // "moduleResolution": "Node",
-//     "moduleResolution": "node",
-
+//     // "moduleResolution": "node",          // modern Node resolution
 //     "strict": true,
 //     "esModuleInterop": true,
 //     "skipLibCheck": true,
@@ -42,7 +41,8 @@
 //       "@mediassist/auth-service/*": ["packages/auth-service/src/*"],
 //       "@mediassist/backend/*": ["apps/backend/src/*"],
 //       "@mediassist/web/*": ["apps/web/src/*"]
-//     }
+//     },
+//     // "ignoreDeprecations": "6.0"          // optional, silences deprecation warnings temporarily
 //   },
 //   "references": [
 //     { "path": "./apps/backend" },

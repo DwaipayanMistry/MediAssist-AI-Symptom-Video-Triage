@@ -1,3 +1,4 @@
+// /app/web/tsconfig.json
 {
   "extends": "../../tsconfig.json",
   "files": [],

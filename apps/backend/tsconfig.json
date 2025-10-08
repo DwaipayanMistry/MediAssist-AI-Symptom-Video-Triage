@@ -2,24 +2,14 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "module": "CommonJS",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "types": ["node"],
     "composite": true,
     "rootDir": "src",
-    "outDir": "dist",
-    // "ignoreDeprecations": "6.0"
+    "outDir": "dist"
   },
   "include": ["src"],
   "references": [{ "path": "../../packages/auth-service" }]
 }
-
-// {
-//   "extends": "../../tsconfig.json",
-//   "compilerOptions": {
-//     "module": "CommonJS",
-//     "composite": true,
-//     "rootDir": "src",
-//     "outDir": "dist"
-//   },
-//   "include": ["src"],
-//   "references": [{ "path": "../../packages/auth-service" }]
-// }
