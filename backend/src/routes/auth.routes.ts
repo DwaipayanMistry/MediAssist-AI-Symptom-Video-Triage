@@ -1,13 +1,15 @@
 import { Router, Request, Response } from "express";
 import {
   hashedPassword,
-  isAuthenticated,
-  hasRole,
   signJwt,
   verifyPassword,
-} from "@mediassist/auth-service";
-import { RegistrationSchema, LoginSchema } from "@mediassist/auth-service";
+} from "../auth/auth.utils.js";
+import {  isAuthenticated,
+  hasRole,} from "../auth/auth.middleware.js"
+import { RegistrationSchema,LoginSchema } from "../auth/schemas.js";
+
 import { PrismaClient } from "@prisma/client";
+import { format } from "path";
 
 const prisma = new PrismaClient();
 const router = Router();

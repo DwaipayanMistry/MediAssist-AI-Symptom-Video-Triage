@@ -11,14 +11,16 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "@repo/ui": "*",
-    "@mediassist/auth-service": "*",
+    "@tailwindcss/vite": "^4.1.14",
     "axios": "^1.11.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^4.1.14",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
+    "@rollup/rollup-linux-x64-gnu": "^4.52.0",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^4.7.0",

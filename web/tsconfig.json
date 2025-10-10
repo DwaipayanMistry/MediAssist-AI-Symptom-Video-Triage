@@ -1,6 +1,5 @@
 // /app/web/tsconfig.json
 {
-  "extends": "../../tsconfig.json",
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },

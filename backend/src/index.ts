@@ -1,7 +1,7 @@
 import { timeStamp } from "console";
 import express, { Request, Response } from "express";
 import dotenv from "dotenv";
-import authRoutes from "./routes/auth.routes";
+import authRoutes from "./routes/auth.routes.js";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
